@@ -43,7 +43,12 @@ const CardList = () => {
     );
   };
 
-  return <section className={styles.cards}>{users ? users.map(getCards) : null}</section>;
+  return (
+    <div>
+      <h1>Umi React Assignment</h1>
+      <section className={styles.cards}>{users ? users.map(getCards) : null}</section>
+    </div>
+  )
 };
 
 export default CardList;
