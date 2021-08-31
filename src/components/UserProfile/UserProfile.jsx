@@ -15,7 +15,7 @@ const UserProfile = (props) => {
     <div className={styles.profile}>
       <h2 className={styles.title}>Posts by {user.name}</h2>
       <div className={styles.topPanel}>
-        <p classname={styles.backButton} onClick={isProfileVisible}>Back</p>
+        <p className={styles.backButton} onClick={isProfileVisible}>Back</p>
         <p>Number of posts: {posts.length}</p>
       </div>
       <div className={styles.body}>

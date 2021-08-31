@@ -4,24 +4,20 @@ $colour-secondary: rgb(248, 247, 247);
 $colour-tertiary: rgb(116, 116, 116);
 $box-shadow: 0 19px 38px rgba(0, 0, 0, 0.137), 0 15px 12px rgba(0,0,0,0.22);
 
-
 .profile {
     width: 100vw;
     position: absolute;
     left: 0;
     top: 0;
-    height: 100vh;
     z-index: 10;
     background-color: $colour-secondary;
-    height: 100%;
-    overflow-y: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
 
     .title {
         color: rgb(24, 24, 24);
-        margin-top: 50px;
+        margin-top: 20px;
         padding: 20px 50px;
         border-radius: $border-radius;
         box-shadow: $box-shadow;
@@ -43,25 +39,47 @@ $box-shadow: 0 19px 38px rgba(0, 0, 0, 0.137), 0 15px 12px rgba(0,0,0,0.22);
     .body {
         width: 100vw;
         display: flex;
+        flex-direction: column;
 
         .userInfo {
-            width: 30%;
-            height: 100px;
-            margin: 20px 20px 20px 200px;
+            height: 80px;
             border-radius: $border-radius;
             text-align: center;
             box-shadow: $box-shadow;
+            width: 80vw;
+            align-self: center;
         }
         
         .posts {
-            width: 70%;
             margin: 20px;
 
             * {
                 background-color: rgba(207, 207, 207, 0.281);
-                // color: $colour-secondary;
                 padding: 0 2px ;
-                // box-shadow: 1px 1px 5px #888888;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .profile {
+        height: 100vh;
+
+        .body {
+            display: flex;
+            flex-direction: row;
+
+            .userInfo {
+                align-self: flex-start;
+                width: 30%; 
+                margin-left: 200px;
+                margin-top: 35px;
+                border-radius: $border-radius;
+            }
+            
+            .posts {
+                width: 70%;
+                margin: 20px;
             }
         }
     }
