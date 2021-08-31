@@ -1,11 +1,11 @@
 import styles from "./App.css";
-import Routes from "./containers/Routes";
+import CardList from './components/CardList';
 
 function App() {
 
   return (
     <section className={styles.content}>
-      <Routes />
+      <CardList />
     </section>
   );
 }

@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./UserProfile.module.scss";
 import Post from "../Post";
 
-
 const UserProfile = (props) => {
   const { isProfileVisible, posts, user } = props;
 

@@ -1,13 +1,12 @@
 import React from "react";
 import styles from "./Routes.module.scss";
-import CardList from '../../components/CardList';
 
-const Routes = (props) => {
-  const { users, posts } = props;
 
+
+const Routes = () => {
   return (
     <section className={styles.main}>
-      <CardList users={users} posts={posts} />
+      Test
     </section>
   );
 };

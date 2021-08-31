@@ -1,15 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Card.module.scss";
 import UserProfile from "../UserProfile";
 
 const Card = (props) => {
-  const { posts, user, profileVisible, isProfileVisible } = props;
+  const { posts, user } = props;
 
-  const profileIsVisible = profileVisible ? styles.profile : styles.hidden
+  const [profileVisible, setProfileVisible] = useState(false);
+
+  // If user profile is not already visible, make visible
+  const isProfileVisible = () => setProfileVisible(!profileVisible);
+
+  const profileIsVisible = profileVisible ? styles.profile : styles.hidden;
+  // const cardIsVisible = !profileVisible ? styles.userInfo : styles.hidden;
 
   return (
-    <section className={styles.card}>
-      <div className={styles.userinfo}>
+    <section className={styles.card} onClick={isProfileVisible}>
+      <div className={styles.userInfo}>
         <div>{user.name}</div>
         <div>{user.email}</div>
       </div>
