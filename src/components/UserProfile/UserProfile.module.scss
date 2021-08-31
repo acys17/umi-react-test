@@ -1,3 +1,10 @@
+$border-radius: 5px;
+$colour-primary: rgb(15, 15, 15);
+$colour-secondary: rgb(248, 247, 247);
+$colour-tertiary: rgb(116, 116, 116);
+$box-shadow: 0 19px 38px rgba(0, 0, 0, 0.137), 0 15px 12px rgba(0,0,0,0.22);
+
+
 .profile {
     width: 100vw;
     position: absolute;
@@ -5,7 +12,57 @@
     top: 0;
     height: 100vh;
     z-index: 10;
-    background-color: white;
+    background-color: $colour-secondary;
     height: 100%;
     overflow-y: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .title {
+        color: rgb(24, 24, 24);
+        margin-top: 50px;
+        padding: 20px 50px;
+        border-radius: $border-radius;
+        box-shadow: $box-shadow;
+    }
+
+    .topPanel {
+        display: flex;
+        justify-content: space-between;
+        width: 90vw;
+
+        p {
+            background-color: $colour-tertiary;
+            padding: 5px 15px;
+            border-radius: $border-radius;
+            color: $colour-secondary;
+        }
+    }
+
+    .body {
+        width: 100vw;
+        display: flex;
+
+        .userInfo {
+            width: 30%;
+            height: 100px;
+            margin: 20px 20px 20px 200px;
+            border-radius: $border-radius;
+            text-align: center;
+            box-shadow: $box-shadow;
+        }
+        
+        .posts {
+            width: 70%;
+            margin: 20px;
+
+            * {
+                background-color: rgba(207, 207, 207, 0.281);
+                // color: $colour-secondary;
+                padding: 0 2px ;
+                // box-shadow: 1px 1px 5px #888888;
+            }
+        }
+    }
 }

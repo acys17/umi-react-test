@@ -13,13 +13,19 @@ const UserProfile = (props) => {
 
   return (
     <div className={styles.profile}>
-      <p onClick={isProfileVisible}>Back</p>
-      <div className={styles.userInfo}>
-        <p>{user.name}</p>
-        <p>{user.email}</p>
+      <h2 className={styles.title}>Posts by {user.name}</h2>
+      <div className={styles.topPanel}>
+        <p classname={styles.backButton} onClick={isProfileVisible}>Back</p>
+        <p>Number of posts: {posts.length}</p>
       </div>
-      <div className={styles.posts}>
-        {posts ? posts.map(getPosts) : null};
+      <div className={styles.body}>
+        <div className={styles.userInfo}>
+          <p>{user.name}</p>
+          <p>{user.email}</p>
+        </div>
+        <div className={styles.posts}>
+          {posts ? posts.map(getPosts) : null}
+        </div>
       </div>
     </div>
   );
