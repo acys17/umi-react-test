@@ -33,17 +33,22 @@ const CardList = () => {
     getPostsAPI();
   }, [])
 
-  const getCardJsx = (user) => {
+  const [profileVisible, setProfileVisible] = useState(false);
+
+  // If user profile is not already visible, make visible
+  const isProfileVisible = () => setProfileVisible(!profileVisible);
+
+  const getCards = (user) => {
     const userPosts = posts ? posts.filter(post => post.userId === user.id) : null;
 
     return (
-      <div className={styles.card} key={user.id}>
-        <Card user={user} posts={userPosts} />
+      <div className={styles.card} key={user.id} onClick={isProfileVisible}>
+        <Card user={user} posts={userPosts} profileVisible={profileVisible} isProfileVisible={isProfileVisible} />
       </div>
     );
   };
 
-  return <section className={styles.cards}>{users ? users.map(getCardJsx) : null}</section>;
+  return <section className={styles.cards}>{users ? users.map(getCards) : null}</section>;
 };
 
 export default CardList;
